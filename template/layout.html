@@ -1,0 +1,18 @@
+<h1>{{.Title}}</h1>
+<h3>
+    {{range .Story}}
+        {{.}}
+    {{end}}
+</h3>
+<div>
+    {{if eq .Title "Home Sweet Home" }}
+        <h3>Yay! You finished your journey!</h3>
+    {{else}}
+        <h3>Here are the options:</h3>
+        <ul>
+            {{range .Options}}
+                <li><a href={{.Arc}}>{{.Text}}</a></li>
+            {{end}}
+        </ul>
+    {{end}}
+</div>
