@@ -14,5 +14,5 @@ Finally, go to `http://localhost/adventure/intro` to see the game in action!
 ## Author
 [Sheshan Patel](https://www.linkedin.com/in/sheshan-patel/) - sheshan1781@gmail.com
 
-##Special Thanks to [Jon Calhoun](https://twitter.com/joncalhoun)
+## Special Thanks to [Jon Calhoun](https://twitter.com/joncalhoun)
 Your course has really helped me and I can't wait to do more of them. Thanks a lot!
