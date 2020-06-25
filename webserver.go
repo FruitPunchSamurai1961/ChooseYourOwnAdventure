@@ -45,11 +45,11 @@ func parseFile() Story {
 func main() {
 	story := parseFile()
 	r := mux.NewRouter()
-	port := os.Getenv("PORT")
-	r.HandleFunc(":"+port, func(writer http.ResponseWriter, request *http.Request) {
-		http.Redirect(writer, request, ":"+port+"adventure/intro", http.StatusFound)
+
+	r.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
+		http.Redirect(writer, request, "http://localhost/adventure/intro", http.StatusFound)
 	})
-	tmpl := template.Must(template.ParseFiles("layout.html"))
+	tmpl := template.Must(template.ParseFiles("template/layout.html"))
 	r.HandleFunc("/adventure/{chapter}", func(writer http.ResponseWriter, request *http.Request) {
 		vars := mux.Vars(request)
 		chosenChapter := vars["chapter"]
@@ -57,5 +57,5 @@ func main() {
 		tmpl.Execute(writer, chapter)
 	})
 
-	http.ListenAndServe(":"+port, r)
+	http.ListenAndServe(":80", r)
 }
